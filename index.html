@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luvyx Browser | v1.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LUVYX <span style="font-weight: 300; opacity: 0.5;">BROWSER</span></div>
+        <div class="nav-right">
+            <a href="https://goblinekkk.github.io/Luvyx-AI/" class="nav-link">AI</a>
+            <button id="menuBtn" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="browser-container">
+        <div class="search-section">
+            <h1 class="hero-text">Hledej s elegancí.</h1>
+            <form id="searchForm" class="search-box">
+                <input type="text" id="searchInput" placeholder="Zadejte adresu nebo hledejte..." autofocus>
+                <button type="submit" id="searchBtn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </form>
+            
+            <div class="shortcuts">
+                <a href="https://www.youtube.com" class="shortcut">YouTube</a>
+                <a href="https://www.github.com" class="shortcut">GitHub</a>
+                <a href="https://www.google.com" class="shortcut">Google</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="branding-footer">LUVYX ECOSYSTEM BY GOBLINEKKK</p>
+    </footer>
+
+    <script>
+        document.getElementById('searchForm').onsubmit = (e) => {
+            e.preventDefault();
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                if (query.includes('.') && !query.includes(' ')) {
+                    window.location.href = query.startsWith('http') ? query : 'https://' + query;
+                } else {
+                    window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                }
+            }
+        };
+    </script>
+</body>
+</html>
