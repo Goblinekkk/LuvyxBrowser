@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Luvyx Browser | v1.1</title>
+    <title>Luvyx Browser | v1.2</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <script async src="https://cse.google.com/cse.js?cx=46d1443ef3c8d4204"></script>
 </head>
 <body>
 
@@ -39,12 +40,10 @@
     <main class="browser-container">
         <div class="search-section">
             <h1 class="hero-text">Hledej s elegancí.</h1>
-            <form id="searchForm" class="search-box">
-                <input type="text" id="searchInput" placeholder="Zadejte adresu nebo hledejte..." autofocus>
-                <button type="submit" id="searchBtn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="3" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </button>
-            </form>
+            
+            <div class="search-wrapper">
+                <div class="gcse-search"></div>
+            </div>
             
             <div class="shortcuts">
                 <a href="https://www.youtube.com" class="shortcut">YouTube</a>
@@ -59,20 +58,6 @@
     </footer>
 
     <script>
-        // Vyhledávání
-        document.getElementById('searchForm').onsubmit = (e) => {
-            e.preventDefault();
-            const query = document.getElementById('searchInput').value.trim();
-            if (query) {
-                if (query.includes('.') && !query.includes(' ')) {
-                    window.location.href = query.startsWith('http') ? query : 'https://' + query;
-                } else {
-                    window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-                }
-            }
-        };
-
-        // Menu logika
         const menu = document.getElementById('mobileMenu');
         const overlay = document.getElementById('overlay');
         
