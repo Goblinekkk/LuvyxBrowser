@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Luvyx Browser | v1.0</title>
+    <title>Luvyx Browser | v1.1</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
 </head>
@@ -11,13 +11,30 @@
 
     <nav>
         <div class="logo">LUVYX <span style="font-weight: 300; opacity: 0.5;">BROWSER</span></div>
-        <div class="nav-right">
-            <a href="https://goblinekkk.github.io/Luvyx-AI/" class="nav-link">AI</a>
-            <button id="menuBtn" class="icon-btn">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+        <div class="nav-links-desktop">
+            <a href="https://goblinekkk.github.io/Luvyx-AI/" class="nav-link">Luvyx AI</a>
+            <a href="https://goblinekkk.github.io/CodeBuddy-AI/" class="nav-link">CodeBuddy</a>
+            <a href="https://goblinekkk.github.io/Free-Apps/" class="nav-link">Free Apps</a>
+        </div>
+        <button id="menuBtn" class="icon-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="menu-header">
+            <h3>Menu</h3>
+            <button id="closeMenu" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
-    </nav>
+        <div class="menu-links">
+            <a href="https://goblinekkk.github.io/Luvyx-AI/">Luvyx AI</a>
+            <a href="https://goblinekkk.github.io/CodeBuddy-AI/">CodeBuddy AI</a>
+            <a href="https://goblinekkk.github.io/Free-Apps/">Free Apps</a>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
 
     <main class="browser-container">
         <div class="search-section">
@@ -31,8 +48,8 @@
             
             <div class="shortcuts">
                 <a href="https://www.youtube.com" class="shortcut">YouTube</a>
-                <a href="https://www.github.com" class="shortcut">GitHub</a>
                 <a href="https://www.google.com" class="shortcut">Google</a>
+                <a href="https://www.github.com" class="shortcut">GitHub</a>
             </div>
         </div>
     </main>
@@ -42,6 +59,7 @@
     </footer>
 
     <script>
+        // Vyhledávání
         document.getElementById('searchForm').onsubmit = (e) => {
             e.preventDefault();
             const query = document.getElementById('searchInput').value.trim();
@@ -52,6 +70,25 @@
                     window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
                 }
             }
+        };
+
+        // Menu logika
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        
+        document.getElementById('menuBtn').onclick = () => {
+            menu.classList.add('open');
+            overlay.style.display = 'block';
+        };
+        
+        document.getElementById('closeMenu').onclick = () => {
+            menu.classList.remove('open');
+            overlay.style.display = 'none';
+        };
+
+        overlay.onclick = () => {
+            menu.classList.remove('open');
+            overlay.style.display = 'none';
         };
     </script>
 </body>
