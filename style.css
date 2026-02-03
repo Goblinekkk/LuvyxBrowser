@@ -1,0 +1,35 @@
+:root { --bg: #ffffff; --text: #000000; --secondary: #f4f4f5; --border: #e4e4e7; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body { background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Navigace stejná jako u AI */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 0 1.5rem; height: 70px; border-bottom: 1px solid var(--border); }
+.logo { font-weight: 800; letter-spacing: 4px; font-size: 1.1rem; }
+.nav-link { text-decoration: none; color: var(--text); font-weight: 700; font-size: 0.8rem; margin-right: 15px; border: 1px solid var(--border); padding: 5px 12px; border-radius: 50px; }
+
+/* Středová sekce */
+.browser-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.search-section { width: 100%; max-width: 600px; text-align: center; }
+.hero-text { font-size: 2.5rem; font-weight: 800; margin-bottom: 30px; letter-spacing: -1px; }
+
+/* Vyhledávací pole */
+.search-box { background: var(--secondary); border-radius: 50px; border: 1px solid var(--border); display: flex; padding: 8px 10px 8px 25px; align-items: center; transition: 0.3s; }
+.search-box:focus-within { background: white; border-color: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+input { flex: 1; border: none; background: transparent; outline: none; font-size: 1.1rem; padding: 10px 0; color: var(--text); }
+#searchBtn { background: #000; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+#searchBtn:active { transform: scale(0.9); }
+
+/* Zkratky */
+.shortcuts { margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.shortcut { text-decoration: none; color: #71717a; font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border-radius: 50px; border: 1px solid var(--border); transition: 0.2s; }
+.shortcut:hover { background: var(--secondary); color: #000; }
+
+/* Footer */
+footer { padding: 30px; text-align: center; }
+.branding-footer { opacity: 0.3; font-size: 0.7rem; letter-spacing: 4px; font-weight: 800; }
+
+@media (max-width: 600px) {
+    .hero-text { font-size: 1.8rem; }
+            }
