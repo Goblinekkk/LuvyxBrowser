@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Luvyx Browser | v1.2</title>
+    <title>Luvyx Browser | v1.3</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
     <script async src="https://cse.google.com/cse.js?cx=46d1443ef3c8d4204"></script>
@@ -57,24 +57,6 @@
         <p class="branding-footer">LUVYX ECOSYSTEM BY GOBLINEKKK</p>
     </footer>
 
-    <script>
-        const menu = document.getElementById('mobileMenu');
-        const overlay = document.getElementById('overlay');
-        
-        document.getElementById('menuBtn').onclick = () => {
-            menu.classList.add('open');
-            overlay.style.display = 'block';
-        };
-        
-        document.getElementById('closeMenu').onclick = () => {
-            menu.classList.remove('open');
-            overlay.style.display = 'none';
-        };
-
-        overlay.onclick = () => {
-            menu.classList.remove('open');
-            overlay.style.display = 'none';
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
